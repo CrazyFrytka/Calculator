@@ -1,25 +1,50 @@
 ﻿using System;
 
+string checkSign (int sign)
+    {
+        if (sign == 1)
+    {
+        return "+";
+    }
+
+    if (sign == 2)
+    {
+        return "-";
+    }
+
+    if (sign == 3)
+    {
+        return "*";
+    }
+
+    if (sign == 4)
+    {
+        return "/";
+    }
+    return "0";
+    }
+int displayValues(int a,int b,int c)
+{
+    string sign = checkSign(c);
+    Console.Write(a + " " + sign + " " + b + " = ");
+    return 0;
+}
 int addition(int a, int b)
 {
-    int c = a + b;
-    return c;
+    return a + b;
 };
 int subtraction(int a, int b)
 {
-    int c = a - b;
-    return c;
+    return a - b;
 };
 int multiplication(int a, int b)
 {
-    int c = a * b;
-    return c;
+    return a * b;
 }
 
-int division(int a, int b)
+double division(double a, double b)
 {
-    int c = a / b;
-    return c;
+    return a / b;
 }
 
 int exponentiation(int a, int b)
@@ -64,6 +89,12 @@ do
         valueOne = Convert.ToInt32(Console.ReadLine());
         valueTwo = 0;
     }
+    else if (startValue == 7)
+    {
+        valueOne = 0;
+        valueTwo = 0;
+        Environment.Exit(0);
+    }
     else
     {
         Console.Write("enter first value: ");
@@ -76,15 +107,19 @@ do
     switch (startValue)
     {
         case 1:
+            displayValues(valueOne, valueTwo, startValue);
             Console.WriteLine(addition(valueOne, valueTwo));
             break;
         case 2:
+            displayValues(valueOne, valueTwo, startValue);
             Console.WriteLine(subtraction(valueOne, valueTwo));
             break;
         case 3:
+            displayValues(valueOne, valueTwo, startValue);
             Console.WriteLine(multiplication(valueOne, valueTwo));
             break;
         case 4:
+            displayValues(valueOne, valueTwo, startValue);
             Console.WriteLine(division(valueOne, valueTwo));
             break;
         case 5:
